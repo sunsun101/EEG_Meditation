@@ -8,14 +8,14 @@ import os
 
 def main():
     BOARD_ID = 8
-    PARTICIPANT_ID = "amp"
+    PARTICIPANT_ID = "Sapna_stressed"
     RECORDING_DIR = "./"
     BoardShim.enable_dev_board_logger()
     params = BrainFlowInputParams()
     board = BoardShim(BOARD_ID, params)
     board.prepare_session()
     board.start_stream ()
-    time.sleep(1200)
+    time.sleep(480)
     # data = board.get_current_board_data (256) # get latest 256 packages or less, doesnt remove them from internal buffer
     data = board.get_board_data()  # get all data and remove it from internal buffer
     raw = getdata(data,BOARD_ID)
